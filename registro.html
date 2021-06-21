@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="./css/lightbox.min.css" rel="stylesheet" />
+    <title>KodeCamp Online</title>
+</head>
+
+<body style="background-color:  rgb(60 60 56 / 10%);">
+    <div style="background:rgb(246 247 247);" class="shadow mb-4">
+        <header class="container ">
+            <div class="row flex-nowrap justify-content-between align-items-center sticky-lg-top">
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="./index.html">Volver al Inicio</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="text-dark" href="#">
+                        <img class="w-25 img-fluid" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+
+                    <select name="" id="">
+                        <option value="">PE</option>
+                        <option value="">MX</option>
+                        <option value="">USD</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+    </div>
+    <main class="container">
+        <div class="py-5 text-center">
+            <h2>Registro de Productos</h2>
+            <p class="blockquote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugit iste iure unde
+                molestias ipsa veritatis, tempora provident aut voluptatibus voluptas reprehenderit, sapiente, assumenda
+                est tempore! Voluptate id laborum consequatur..</p>
+        </div>
+        <div class="col pb-5">
+            <h4 class="mb-3">Agregar Producto</h4>
+            <form class="form-producto" id="form-producto">
+                <div class="row g-3">
+                    <div class="col-md-12 col-lg-4">
+                        <label for="firstName" class="form-label">Titulo del card</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Consiso" value=""
+                            required="">
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2 bg-light bg-gradient">
+                        <label for="lastName" class="form-label">Precio del producto</label>
+                        <input type="text" class="form-control monto" id="precio" name="precio" placeholder="En soles "
+                            value="" required="">
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2 bg-light bg-gradient">
+                        <label for="lastName" class="form-label">Descuento?</label>
+                        <input type="text" class="form-control monto" id="descuento" name="descuento"
+                            placeholder="En soles" value="0">
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2 bg-light bg-gradient">
+                        <label for="lastName" class="form-label">Calcular</label>
+                        <input type="button" class="btn btn-warning form-control fs-6" id="calcular" name="calcular"
+                            value="Calcular">
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2 bg-light bg-gradient">
+                        <label for="lastName" class="form-label">Monto</label>
+                        <input type="text" class="form-control" id="precioFinal" name="precioFinal"
+                            placeholder="Precio Final" value="" disabled>
+                    </div>
+
+
+                    <div class="col-12 col-lg-6">
+                        <label for="address" class="form-label">Categoria </label>
+                        <select name="categoria" id="categoria" class="form-control" required="">
+                            <option value="">-- Selecione --</option>
+                            <option value="Camisas">Camisas</option>
+                            <option value="Polos">Polos</option>
+                            <option value="Poleras">Poleras</option>
+                            <option value="Shorts">Shorts</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="address" class="form-label">Tienda </label>
+                        <select name="tienda" id="tienda" class="form-control" required="">
+                            <option value="">-- Selecione --</option>
+                            <option value="Lima">Lima</option>
+                            <option value="Trujillo">Trujillo</option>
+                            <option value="Cuzco">Cuzco</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="address" class="form-label">Descripcion </label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion"
+                            placeholder="Ingrese Descripcion" required="">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="formFile" class="form-label">Imagen/Foto del producto</label>
+                        <input class="form-control" type="file" id="imgProducto" name="imgProducto" required>
+                    </div>
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Agregar Producto</button>
+                </div>
+            </form>
+        </div>
+        <div class="col py-3 ">
+            <h4 class="mb-3">Todos mis productos Producto</h4>
+            <div class="bg-white p-3 rounded-3">
+                <table id="tblProduct" class="table table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th scope="col">Titulo Card</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Tienda</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyProduct">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center border-top mt-2 pt-4 pb-2 bg-light shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 text-center">
+                    <a class="text-dark" href="#">
+                        <img class="w-25 img-fluid" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <p>© 2021 Store Online | Lima & Peru</p>
+                    <p>
+                        dev: Jairo Rocano
+                    </p>
+                    <p><a href="#">Subir</a></p>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="./js/lightbox-plus-jquery.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script data-main="scripts/app" src="./js/firebase.js"></script>
+    <script data-main="scripts/app" src="./js/create_product.js"></script>
+
+
+</body>
+
+</html>

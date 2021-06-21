@@ -1,0 +1,48 @@
+  .card .category{
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px;
+    margin-bottom:10px;
+    position:relative;
+    transition: all 0.2s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .card .category > span{
+    padding: 12px 30px;
+    border: 1px solid #313131;
+    background:#212121;
+    color:#fff;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius:27px;
+    transition: all 0.05s ease-in-out;
+    
+  }
+
+  #cards_landscape .card img{
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+  }
+
+  #cards_landscape .card:hover img{
+    transition: all 0.5s ease-in-out;
+    transform:scale(1.55);
+    z-index: 10;
+  }
+
+#cards_landscape .card:hover .category > span{
+    box-shadow: none;
+    padding: 11px 28px;
+  }
+
+  .novedades > div{
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position-x: center;
+    background-position-y: center;
+  }
+
+  .novedades > div:hover{
+    background-size: auto;
+  }
